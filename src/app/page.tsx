@@ -1,11 +1,16 @@
-import { TopClipsSelect } from "@/components/Select";
+import { TopClipsSelect } from "@/components/TopClipsSelect";
 
 export default function Home() {
   return (
-    <div>
-      <form>
-        <TopClipsSelect />
-      </form> 
+    <div className="pt-5">
+      <div>
+        <form>
+          <TopClipsSelect />
+        </form>
+      </div>
+      <div className="mt-2">
+        Something 
+      </div>
     </div>
   )
 }
