@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   const response = await fetch(`https://api.twitch.tv/helix/clips?game_id=${game_id}`, {
     headers: {
       "Authorization": `Bearer ${token}`,
-      "Client-Id": process.env.CLIENT_ID
+      "Client-Id": `${process.env.CLIENT_ID}` 
     }
   })
 
