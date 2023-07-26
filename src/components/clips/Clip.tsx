@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Card, CardContent, CardFooter } from "../ui/card";
+import { Avatar, AvatarFallback } from "../ui/avatar";
 
 interface ClipProps {
   broadcaster_id?: string,
@@ -22,14 +23,17 @@ interface ClipProps {
 
 export function Clip({ thumbnail_url, broadcaster_name, title, url }: ClipProps) {
   return (
-    <Card>
-      <CardContent>
-        <Image src={thumbnail_url} width={480} height={272} alt="Clip Thumbnail" />
+    <Card className="h-[271px]">
+      <CardContent className="pt-1 pb-0 px-2">
+        <a href={url} target="_blank">
+          <Image src={thumbnail_url} width={480} height={272} alt="Clip Thumbnail" />
+        </a>
       </CardContent>
-      <CardFooter>
-       <p>{broadcaster_name}</p>
-       <p>{title}</p>
-       <a>{url}</a>
+      <CardFooter className="flex-col items-start justify-center font-clamp-1 px-2 py-1 truncate max-w-full">
+        <p className="font-bold max-w-full truncate">
+        {broadcaster_name}
+        </p>
+        <p className="font-medium max-w-full truncate">{title}</p>
       </CardFooter>
     </Card>
   )

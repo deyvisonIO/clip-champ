@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <div className="pt-5">
+    <>
       <div>
         <form>
           <Suspense fallback="Loading..." >
@@ -12,11 +12,9 @@ export default function Home() {
           </Suspense>
         </form>
       </div>
-      <div className="mt-2">
-        <Suspense fallback="Loading...">
-          <Clips />
-        </Suspense>
-      </div>
-    </div>
+      <Suspense fallback="Loading...">
+        <Clips />
+      </Suspense>
+    </>
   )
 }
