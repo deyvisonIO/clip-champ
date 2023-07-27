@@ -1,5 +1,5 @@
 'use client'
-import { use, useMemo} from "react";
+import { use } from "react";
 import { Clip } from "./Clip";
 import { useFetch } from "@/lib/hooks/useFetch";
 
@@ -9,7 +9,7 @@ export function Clips() {
   const { data:clips } = use(clipsFetch);
 
   return(
-    <div className="mt-2 grid gap-2 grid-cols-4 auto-rows-auto max-h-full">
+    <div className="flex flex-wrap min-w-full mt-1">
       {clips.map((clip: any) => <Clip key={clip.id} thumbnail_url={clip.thumbnail_url} broadcaster_name={clip.broadcaster_name} title={clip.title} url={clip.url} />)} 
     </div>
 

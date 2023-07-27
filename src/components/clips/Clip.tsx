@@ -23,18 +23,20 @@ interface ClipProps {
 
 export function Clip({ thumbnail_url, broadcaster_name, title, url }: ClipProps) {
   return (
-    <Card className="h-[271px]">
-      <CardContent className="pt-1 pb-0 px-2">
-        <a href={url} target="_blank">
-          <Image src={thumbnail_url} width={480} height={272} alt="Clip Thumbnail" />
-        </a>
-      </CardContent>
-      <CardFooter className="flex-col items-start justify-center font-clamp-1 px-2 py-1 truncate max-w-full">
-        <p className="font-bold max-w-full truncate">
-        {broadcaster_name}
-        </p>
-        <p className="font-medium max-w-full truncate">{title}</p>
-      </CardFooter>
-    </Card>
+    <div className="w-[30rem] max-w-[50%] grow shrink-0 flex-basis-auto px-1 mb-4 ml-0 overflow-hidden">
+      <Card >
+        <CardContent className="pt-1 pb-0 px-2">
+          <a href={url} target="_blank">
+            <Image src={thumbnail_url} width={480} height={272} alt="Clip Thumbnail" />
+          </a>
+        </CardContent>
+        <CardFooter className="flex-col items-start justify-center font-clamp-1 px-2 py-1 truncate max-w-full">
+          <p className="font-bold max-w-full truncate">
+          {broadcaster_name}
+          </p>
+          <p className="font-medium max-w-full truncate">{title}</p>
+        </CardFooter>
+      </Card>
+    </div>
   )
 }

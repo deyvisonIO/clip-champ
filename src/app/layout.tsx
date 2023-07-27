@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-          <div className="px-60 pt-5 bg-neutral-900 h-max min-h-screen pb-2">
+          <div className="lg:px-60 pt-5 bg-neutral-900 h-max min-h-screen pb-2 sm:px-0">
             <Suspense fallback="Loading...">
               {children}
             </Suspense>
