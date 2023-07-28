@@ -1,12 +1,23 @@
 'use client'
-import { use } from "react";
+import { useEffect, useState } from "react";
 import { Clip } from "./Clip";
 import { useFetch } from "@/lib/hooks/useFetch";
-
-const clipsFetch = useFetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/clips/search/game?game_id=516575`);
+import { useParams } from "next/navigation";
 
 export function Clips() {
-  const { data:clips } = use(clipsFetch);
+  const game_id = useParams().game_id || '516575';
+  const [clips, setClips] = useState([]);
+
+  useEffect(() => {
+    useFetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/clips/search/game?game_id=${game_id}`).then(response => setClips(() => response.data));
+  }, []);
+  
+
+  console.log("clips", clips);
+
+  if (clips.length == 0) {
+    return null;
+  }
 
   return(
     <div className="flex flex-wrap min-w-full mt-1">

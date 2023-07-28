@@ -1,15 +1,12 @@
-import { BoxArt } from "@/components/BoxArt";
+'use client'
+import { Suspense } from "react";
 import { TopClipsSelect } from "@/components/TopClipsSelect";
 import { Clips } from "@/components/clips/Clips";
-import { Suspense } from "react";
 
-
-export default function Home() {
-  
+export default function Game() {
   return (
     <>
       <div>
-        <BoxArt />
         <form>
           <Suspense fallback="Loading..." >
             <TopClipsSelect />
