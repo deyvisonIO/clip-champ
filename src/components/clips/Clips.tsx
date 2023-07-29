@@ -9,9 +9,9 @@ export function Clips() {
   const [clips, setClips] = useState([]);
 
   useEffect(() => {
-    useFetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/clips/search/game?game_id=${game_id}`).then(response => setClips(() => response.data));
+    useFetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/clips/search/game?game_id=${game_id}`).then(response => setClips(() => response.error ? "" : response.data ));
   }, []);
-  
+
 
   console.log("clips", clips);
 
