@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Search } from "./Search";
+import ErrorBoundary from "./ErrorBoundary";
 
 export function Header() {
   return (
@@ -7,7 +8,9 @@ export function Header() {
     <div className="shrink flex justify-center items-center gap-7 max-w-100">
       <Link href="/" className="text-center text-white text-[32px] font-bold">TwitchChamp</Link>
     </div>
-    <Search />
+    <ErrorBoundary fallback="Could not load search">
+      <Search />
+    </ErrorBoundary>
   </div> 
   )
 }
