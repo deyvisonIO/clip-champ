@@ -28,7 +28,7 @@ export function Search() {
   }
 
   return (
-    <div >
+    <div>
       <form className="max-w-sm h-10 flex gap-1" onSubmit={(e) => submitSearch(e)}>
         <Input 
           type="text" 
